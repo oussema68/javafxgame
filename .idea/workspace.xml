@@ -5,38 +5,167 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3091ab23-e927-4874-8f41-eca635f687b4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.github/workflows/qodana_code_quality.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/high_scores.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qodana.sarif.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qodana.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/BoardController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/FrontPageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/GameBoard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/HighScoresController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/SceneManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/high_scores.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/high_scores.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/puzzle/PuzzleState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/puzzle/SolverIntegration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/puzzle/State.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/board.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/front_page.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/high_scores.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/high_scores.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+    <option name="PARALLEL_COMPILATION" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="downloadAnnotationsAutomatically" value="true" />
+        <option name="downloadDocsAutomatically" value="true" />
+        <option name="downloadSourcesAutomatically" value="true" />
+        <option name="workspaceImportForciblyTurnedOn" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2gzxNHSQgcY9UVu6wj6B3cE8wPq" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.StoneGame.executor&quot;: &quot;Run&quot;,
+    &quot;Application.game.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Maven.game-project [org.openjfx:javafx-maven-plugin:0.0.8:jlink].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.game-project [org.openjfx:javafx-maven-plugin:0.0.8:run].executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Brigi/Desktop/soft/game/target/classes/org&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.4275862&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propDebugger&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;JSON&quot;
+    ]
   }
-}]]></component>
+}</component>
+  <component name="QodanaCIConfigService">
+    <option name="ciType" value="GITHUB" />
+    <option name="path" value="$PROJECT_DIR$/.github/workflows/qodana_code_quality.yml" />
+  </component>
+  <component name="QodanaHighlightedReportService">
+    <option name="localReportPersistedInfo">
+      <LocalReportPersistedInfo>
+        <option name="path" value="C:\Users\Brigi\Desktop\soft\game\qodana.sarif.json" />
+        <option name="reportGuid" value="6d43cc36-e305-49cd-b108-24a3483b52e5" />
+        <option name="reportName" value="game/qodana/2024-05-26" />
+      </LocalReportPersistedInfo>
+    </option>
+  </component>
+  <component name="QodanaIsSelectedPersistenceService">
+    <option name="selectedOrLoading" value="true" />
+  </component>
+  <component name="QodanaReportsService">
+    <option name="descriptions">
+      <ReportDescription path="C:\Users\Brigi\Desktop\soft\game\qodana.sarif.json" reportGuid="6d43cc36-e305-49cd-b108-24a3483b52e5" reportId="game/qodana/2024-05-26" />
+    </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.example" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Brigi\Desktop\soft\game\target\classes\org" />
+      <recent name="C:\Users\Brigi\Desktop\soft\game\src\main\java\org\example" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Brigi\Desktop\soft\game\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="game" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
+      <module name="game" />
+      <option name="PROGRAM_PARAMETERS" value="$USER_HOME$/.m2/repository$MODULE_DIR$$MODULE_WORKING_DIR$$AffectedModuleNames$" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Brigi\Downloads\openjfx-21.0.3_windows-x64_bin-sdk\javafx-sdk-21.0.3\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
+        <option value="jdk-21.0.2-corretto-21.0.2-4caba194b151-51586f01" />
         <option value="jdk-22-openjdk-22-4caba194b151-f504ca98" />
       </set>
     </attachedChunks>
@@ -49,11 +178,40 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716714170424</updated>
-      <workItem from="1716714171507" duration="4000" />
+      <workItem from="1716714171507" duration="4939000" />
+      <workItem from="1716725627631" duration="2144000" />
+      <workItem from="1716748081703" duration="7699000" />
+      <workItem from="1716816895093" duration="11433000" />
+      <workItem from="1716887021077" duration="9337000" />
+      <workItem from="1716896901871" duration="1130000" />
+      <workItem from="1716898039089" duration="1435000" />
+      <workItem from="1717006442622" duration="7949000" />
+      <workItem from="1717582999631" duration="4537000" />
+      <workItem from="1717588203372" duration="15058000" />
+      <workItem from="1719226717201" duration="38776000" />
+      <workItem from="1726466657994" duration="6560000" />
+      <workItem from="1727174956061" duration="5448000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.io.FileNotFoundException" package="java.io" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

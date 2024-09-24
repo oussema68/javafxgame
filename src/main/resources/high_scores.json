@@ -1,0 +1,9 @@
+{
+  "highScores": [
+    {"name": "John", "score": 500},
+    {"name": "Alice", "score": 400},
+    {"name": "Bob", "score": 300},
+    {"name": "Eve", "score": 200},
+    {"name": "Jane", "score": 100}
+  ]
+}

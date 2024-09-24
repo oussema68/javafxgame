@@ -1,2 +1,9 @@
-package org.example.puzzle;public class State {
+package org.example.puzzle;
+
+import java.util.List;
+
+public interface State {
+    boolean isGoal();
+    List<PuzzleState> generateNextStates();
+    State getPreviousState();
 }

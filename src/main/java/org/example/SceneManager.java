@@ -8,14 +8,13 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class SceneManager {
-
     private static SceneManager instance;
     private Stage stage;
 
     private SceneManager() {
     }
 
-    public static synchronized SceneManager getInstance() {
+    public static SceneManager getInstance() {
         if (instance == null) {
             instance = new SceneManager();
         }
@@ -26,15 +25,16 @@ public class SceneManager {
         this.stage = stage;
     }
 
-    public void loadScene(String fxmlFile) {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(fxmlFile));
-            Parent root = fxmlLoader.load();
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
+    public void loadScene(String fxmlPath) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+
+        if (fxmlPath.equals("/high_scores.fxml")) {
+            HighScoresController controller = loader.getController();
+            controller.initializeHighScores(HighScoresController.getHighScores());
         }
     }
 }

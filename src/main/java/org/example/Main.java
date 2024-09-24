@@ -1,7 +1,26 @@
 package org.example;
 
-public class Main {
+import javafx.application.Application;
+import javafx.stage.Stage;
+
+import java.io.IOException;
+
+public class Main extends Application {
+
+    @Override
+    public void start(Stage primaryStage) throws IOException {
+        // Set up the SceneManager
+        SceneManager.getInstance().setStage(primaryStage);
+
+        // Load the initial scene
+        SceneManager.getInstance().loadScene("/front_page.fxml");
+
+        // Set and show the stage
+        primaryStage.setTitle("Game Front Page");
+        primaryStage.show();
+    }
+
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        launch(args);
     }
 }
