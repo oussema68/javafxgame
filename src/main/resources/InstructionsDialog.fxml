@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.InstructionsDialogController"
+            prefHeight="400.0" prefWidth="600.0">
+    <!-- Text for displaying static paragraph -->
+    <Text layoutX="50.0" layoutY="50.0" wrappingWidth="500.0" style="-fx-font-size: 18px;">
+        Objective: Move the stone from the top-left to the bottom-right corner marked with an *!
+        How to Play:
+
+        Each square has a number indicating how many spaces you can move.
+        If you land on a framed square, you can only move diagonally until you reach an unframed square.
+        You can't move outside the board.
+
+        Click on when you're ready!
+        Have fun navigating the board!
+    </Text>
+
+    <!-- Button to proceed -->
+    <Button layoutX="250.0" layoutY="350.0" text="READY!!" onAction="#start" />
+    <Button layoutX="250.0" layoutY="350.0" text="born ready.." onAction="#start" />
+</AnchorPane>
