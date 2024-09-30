@@ -34,5 +34,28 @@ build/
 ### VS Code ###
 .vscode/
 
-### Mac OS ###
+# Compiled class files
+*.class
+
+# Build directories
+/build/
+target/
+
+# IDE files
+.idea/
+*.iml
+.project
+.classpath
+.vscode/
+
+# Log and temporary files
+*.log
+*.tmp
+*.swp
+
+# OS generated files
 .DS_Store
+
+# Environment-specific files
+*.properties
+*.env

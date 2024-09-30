@@ -1,14 +1,8 @@
 package org.example;
 
-import javafx.animation.PauseTransition;
-import javafx.event.Event;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
-import javafx.stage.Stage;
-import javafx.util.Duration;
 
 import java.io.IOException;
 
@@ -37,15 +31,16 @@ public class FrontPageController {
     @FXML
     private void startGame() {
         displayWelcomeMessage();
+
         loadGameScene();
     }
 
     private void displayWelcomeMessage() {
-        // Create an alert dialog for the welcome message
+        /** Create an alert dialog for the welcome message
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Welcome to the Game!");
-        alert.setHeaderText("how to frame it");
-        alert.setContentText("""
+        alert.setHeaderText("how to frame it"); */
+        welcomeLabel.setText("""
             Objective: Move the stone from the top-left to the bottom-right corner marked with an *!
             How to Play:
 
@@ -58,13 +53,9 @@ public class FrontPageController {
             Click on Ok when you're ready!
             Have fun navigating the board!""");
 
-        // Disable the OK button initially
+        /** Disable the OK button initially
         alert.getDialogPane().lookupButton(ButtonType.OK).setDisable(true);
 
-        // Prevent the user from closing the dialog with the close button
-        Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-        // Consume the event to prevent closing the dialog
-        stage.setOnCloseRequest(Event::consume);
 
 
         // Create a PauseTransition to wait for 30 seconds
@@ -73,13 +64,12 @@ public class FrontPageController {
             // Enable the OK button after the wait
             alert.getDialogPane().lookupButton(ButtonType.OK).setDisable(false);
 
-            // Re-enable the ability to close the alert
-            stage.setOnCloseRequest(null); // Allow closing the alert after time
+
         });
 
         // Show the alert and start the pause
         alert.show();
-        pause.play();
+        pause.play();  */
     }
 
     private void loadGameScene() {

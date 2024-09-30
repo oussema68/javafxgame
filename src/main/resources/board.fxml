@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 
 <VBox prefHeight="800" prefWidth="800" style="-fx-border-color: black; -fx-background-color: #808080;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.BoardController">
-    <GridPane fx:id="boardGrid" alignment="CENTER" gridLinesVisible="true" VBox.vgrow="ALWAYS">
+    <GridPane fx:id="boardGrid" alignment="CENTER" gridLinesVisible="true" VBox.vgrow="ALWAYS" >
         <columnConstraints>
             <ColumnConstraints percentWidth="12.5" />
             <ColumnConstraints percentWidth="12.5" />

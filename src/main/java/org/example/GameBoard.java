@@ -1,5 +1,6 @@
 package org.example;
 
+import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
@@ -146,15 +147,28 @@ public class GameBoard {
                 // Check if it's the specific position (7,7) where "*" should be displayed
                 String buttonText = (i == 7 && j == 7) ? "*" : String.valueOf(board[i][j]);
                 Button button = new Button(buttonText);
+
+                // Set button size to fill space and remove padding
+                button.setMinSize(50, 50); // Adjust size as needed
+                button.setPrefSize(50, 50); // Ensure uniform size
+                button.setMaxSize(Double.MIN_NORMAL, Double.MIN_NORMAL); // Allow buttons to stretch
+
+                button.setPadding(new Insets(0)); // Remove internal padding
+
+
                 if (framed[i][j]) {
-                    button.setStyle("-fx-border-color: black;");
+                    button.setStyle("-fx-border-color: black; -fx-border-width: 2; -fx-border-style: solid;" );
                 }
                 gridPane.add(button, j, i);
             }
         }
         Button stoneButton = new Button(String.valueOf(board[stonePositionY][stonePositionX]));
         stoneButton.setStyle("-fx-background-color: lightblue;");
+        stoneButton.setMinSize(50, 50); // Match size with other buttons
+        stoneButton.setPrefSize(50, 50); // Ensure uniform size
+        stoneButton.setMaxSize(Double.MIN_NORMAL, Double.MIN_NORMAL); // Allow stretching
         gridPane.add(stoneButton, stonePositionX, stonePositionY);
+
         isFramed = framed[stonePositionY][stonePositionX];
         infoLabel.setText("Current value: " + board[stonePositionY][stonePositionX] + ", Framed: " + isFramed);
 
