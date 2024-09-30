@@ -40,7 +40,18 @@ public class FrontPageController {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Welcome to the Game!");
         alert.setHeaderText("Welcome to the Game!");
-        alert.setContentText("Navigate the board by moving the stone. Avoid framed cells and try to reach the goal!");
+        alert.setContentText("""
+                Objective: Move the stone from the top-left to the bottom-right corner marked with an *!
+                How to Play:
+
+                Each square has a number indicating how many spaces you can move.
+                If you land on a framed square, you can only move diagonally until you reach an unframed square.
+                You can't move outside the board.
+                Strategy Tips:
+                Plan your moves to avoid framed squares.
+                Use diagonal moves wisely!
+                Click on Ok when you're ready!
+                Have fun navigating the board!""");
         alert.showAndWait();
     }
 
