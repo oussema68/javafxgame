@@ -1,9 +1,12 @@
 package org.example;
 
+import javafx.animation.PauseTransition;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
+import javafx.util.Duration;
 
 import java.io.IOException;
 
@@ -41,18 +44,31 @@ public class FrontPageController {
         alert.setTitle("Welcome to the Game!");
         alert.setHeaderText("Welcome to the Game!");
         alert.setContentText("""
-                Objective: Move the stone from the top-left to the bottom-right corner marked with an *!
-                How to Play:
+            Objective: Move the stone from the top-left to the bottom-right corner marked with an *!
+            How to Play:
 
-                Each square has a number indicating how many spaces you can move.
-                If you land on a framed square, you can only move diagonally until you reach an unframed square.
-                You can't move outside the board.
-                Strategy Tips:
-                Plan your moves to avoid framed squares.
-                Use diagonal moves wisely!
-                Click on Ok when you're ready!
-                Have fun navigating the board!""");
-        alert.showAndWait();
+            Each square has a number indicating how many spaces you can move.
+            If you land on a framed square, you can only move diagonally until you reach an unframed square.
+            You can't move outside the board.
+            Strategy Tips:
+            Plan your moves to avoid framed squares.
+            Use diagonal moves wisely!
+            Click on Ok when you're ready!
+            Have fun navigating the board!""");
+
+        // Disable the OK button initially
+        alert.getDialogPane().lookupButton(ButtonType.OK).setDisable(true);
+
+        // Create a PauseTransition to wait for 30 seconds
+        PauseTransition pause = new PauseTransition(Duration.seconds(15));
+        pause.setOnFinished(event -> {
+            // Enable the OK button after the wait
+            alert.getDialogPane().lookupButton(ButtonType.OK).setDisable(false);
+        });
+
+        // Show the alert and start the pause
+        alert.show();
+        pause.play();
     }
 
     private void loadGameScene() {
