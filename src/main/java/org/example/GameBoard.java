@@ -5,33 +5,27 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Represents the game board where the player moves a stone through cells with various values.
  * The objective is to reach the goal while navigating framed cells and making valid moves.
  */
 public class GameBoard {
+    private static final Logger LOGGER = Logger.getLogger(GameBoard.class.getName());
     public static boolean isFramed;
-
     public static int size = 0;
     private GridPane gridPane;
     public static int[][] board;
     private boolean[][] framed;
     private static int stonePositionX;
     private static int stonePositionY;
-
     private Random random;
     private Label infoLabel;
     private BoardController boardController;
 
-    /**
-     * Constructs a new {@code GameBoard} with the specified size, grid pane, and info label.
-     *
-     * @param size the size of the game board
-     * @param gridPane the {@link GridPane} to display the board
-     * @param infoLabel the {@link Label} to display information
-     */
-    public GameBoard(int size, GridPane gridPane, Label infoLabel) {
+    public GameBoard(int size, GridPane gridPane, Label infoLabel, BoardController boardController) {
         this.size = size;
         this.gridPane = gridPane;
         this.infoLabel = infoLabel;
@@ -41,13 +35,20 @@ public class GameBoard {
         this.stonePositionY = 0;
         this.isFramed = false; // Initially not framed
         this.random = new Random();
+        this.boardController = boardController;  // Assign the boardController here
 
+        LOGGER.log(Level.INFO, "Initializing GameBoard with size {0}x{0}", size);
+
+        // Initialize and check if the board is solvable
         boolean solvable = false;
         while (!solvable) {
             initializeBoardValues();
             updateBoard();
             if (isSolvable(board)) {
                 solvable = true;
+                LOGGER.log(Level.INFO, "Board initialized and solvable");
+            } else {
+                LOGGER.log(Level.WARNING, "Generated board is not solvable, regenerating...");
             }
         }
     }
@@ -74,9 +75,9 @@ public class GameBoard {
             }
         }
 
+        LOGGER.log(Level.INFO, "Counted {0} inversions in the board", inversions);
         return inversions;
     }
-
 
     private boolean isSolvable(int[][] board) {
         int inversions = countInversions(board);
@@ -93,80 +94,49 @@ public class GameBoard {
         }
 
         // Check solvability based on the number of inversions and the row index of the empty cell
-        // 8x8 board specific solvability check
-        return (emptyRowIndex % 2 == 0 && inversions % 2 != 0) || (emptyRowIndex % 2 != 0 && inversions % 2 == 0);
+        boolean solvable = (emptyRowIndex % 2 == 0 && inversions % 2 != 0) || (emptyRowIndex % 2 != 0 && inversions % 2 == 0);
+        LOGGER.log(Level.INFO, "Board solvability: {0}", solvable);
+        return solvable;
     }
 
-
-
-
-    /** public GameBoard(int[][] boardState) {
-        this.board = boardState;
-        // Initialize stone positions based on the board state
-        for (int i = 0; i < boardState.length; i++) {
-            for (int j = 0; j < boardState[i].length; j++) {
-                if (boardState[i][j] == 0) { // Assuming 0 represents the stone
-                    stonePositionX = j;
-                    stonePositionY = i;
-                }
-            }
-        }
-    }
-
-     */
-
-    /**
-     * Initializes the board with random values and randomly frames some squares.
-     */
     private void initializeBoardValues() {
         Random random = new Random();
+        LOGGER.log(Level.INFO, "Initializing board values");
 
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
-                // Check if the cell is within the inner 4x4 box
                 if (i >= (size / 2 - 2) && i < (size / 2 + 2) && j >= (size / 2 - 2) && j < (size / 2 + 2)) {
                     board[i][j] = random.nextInt(4) + 1; // Random values between 1 and 4
                 } else {
                     board[i][j] = random.nextInt(7) + 1; // Random values between 1 and 7
                 }
                 framed[i][j] = random.nextBoolean(); // Randomly frame squares
+                LOGGER.log(Level.FINE, "Cell [{0}, {1}] set to {2}, Framed: {3}", new Object[]{i, j, board[i][j], framed[i][j]});
             }
         }
     }
 
-    /**
-     * Moves the stone by the specified deltas and updates the board.
-     *
-     * @param dx the change in the x-coordinate
-     * @param dy the change in the y-coordinate
-     */
     public void moveStone(int dx, int dy) {
         if (isValidMove(dx, dy)) {
             stonePositionX += dx;
             stonePositionY += dy;
             BoardController.incrementNumberOfMoves();
+            LOGGER.log(Level.INFO, "Moved stone to [{0}, {1}]", new Object[]{stonePositionX, stonePositionY});
             updateBoard();
         } else {
+            LOGGER.log(Level.SEVERE, "Invalid move out of bounds to [{0}, {1}]", new Object[]{stonePositionX + dx, stonePositionY + dy});
             lose();
         }
     }
 
-    /**
-     * Checks if the move is valid.
-     *
-     * @param dx the change in the x-coordinate
-     * @param dy the change in the y-coordinate
-     * @return {@code true} if the move is valid, {@code false} otherwise
-     */
     public static boolean isValidMove(int dx, int dy) {
         int newX = stonePositionX + dx;
         int newY = stonePositionY + dy;
-        return newX >= 0 && newX < size && newY >= 0 && newY < size;
+        boolean valid = newX >= 0 && newX < size && newY >= 0 && newY < size;
+        LOGGER.log(Level.INFO, "Move to [{0}, {1}] is {2}", new Object[]{newX, newY, valid ? "valid" : "invalid"});
+        return valid;
     }
 
-    /**
-     * Updates the board to reflect the current state, including the stone's position and framing.
-     */
     private void updateBoard() {
         gridPane.getChildren().clear();
         for (int i = 0; i < size; i++) {
@@ -179,41 +149,36 @@ public class GameBoard {
             }
         }
         Button stoneButton = new Button(String.valueOf(board[stonePositionY][stonePositionX]));
-        stoneButton.setStyle("-fx-background-color: lightblue;" );
-
-
+        stoneButton.setStyle("-fx-background-color: lightblue;");
         gridPane.add(stoneButton, stonePositionX, stonePositionY);
         isFramed = framed[stonePositionY][stonePositionX];
         infoLabel.setText("Current value: " + board[stonePositionY][stonePositionX] + ", Framed: " + isFramed);
 
+        LOGGER.log(Level.INFO, "Board updated. Stone at [{0}, {1}]", new Object[]{stonePositionX, stonePositionY});
+
         if (checkWinCondition()) {
             infoLabel.setText("Congratulations! You've reached the goal!");
+            LOGGER.log(Level.INFO, "Game won!");
             if (this.boardController != null) {
+                System.out.println("thers a value");
                 this.boardController.gameOver();
-            } else {
-                infoLabel.setText("congrats ama tneket");
             }
-
         }
     }
 
-    /**
-     * Checks if the player has won by reaching the goal position.
-     *
-     * @return {@code true} if the player has reached the goal, {@code false} otherwise
-     */
     public boolean checkWinCondition() {
-        return stonePositionX == size - 1 && stonePositionY == size - 1;
+        boolean won = stonePositionX == size - 1 && stonePositionY == size - 1;
+        LOGGER.log(Level.INFO, "Check win condition: {0}", won);
+        return won;
     }
 
-    /**
-     * Handles the loss condition when the player moves out of the board.
-     */
     private void lose() {
         infoLabel.setText("You've moved out of the board! Game Over!");
+        LOGGER.log(Level.SEVERE, "Game Over! Invalid move");
     }
 
-    /**
+
+/**
      * Moves the stone to the right by the number of steps in the current cell's value if not framed.
      */
     public void moveRight() {

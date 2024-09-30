@@ -4,8 +4,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class PuzzleState implements State {
+    private static final Logger LOGGER = Logger.getLogger(PuzzleState.class.getName());
     private final int[][] board;
     private PuzzleState previousState;
     private int stonePositionX;
@@ -13,23 +16,24 @@ public class PuzzleState implements State {
 
     public PuzzleState(int[][] board) {
         this.board = board;
+
         // Find the stone (0) position
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[i].length; j++) {
                 if (board[i][j] == 0) {
                     stonePositionX = i;
                     stonePositionY = j;
+                    LOGGER.log(Level.INFO, "Stone found at position ({0}, {1})", new Object[]{stonePositionX, stonePositionY});
                 }
             }
         }
     }
 
     public boolean isGoal() {
-        // Define the goal state check
-        return stonePositionX == board.length - 1 && stonePositionY == board[0].length - 1;
+        boolean goalReached = stonePositionX == board.length - 1 && stonePositionY == board[0].length - 1;
+        LOGGER.log(Level.INFO, "Goal state check: {0}", goalReached);
+        return goalReached;
     }
-
-    // Assuming a way to identify framed squares, e.g., a boolean method isFramed(int x, int y)
 
     // This method creates a deep copy of the current board state
     private int[][] copyBoardState(int[][] board) {
@@ -37,6 +41,7 @@ public class PuzzleState implements State {
         for (int i = 0; i < board.length; i++) {
             System.arraycopy(board[i], 0, newBoard[i], 0, board[i].length);
         }
+        LOGGER.log(Level.FINE, "Created a copy of the board state");
         return newBoard;
     }
 
@@ -48,9 +53,11 @@ public class PuzzleState implements State {
         // If the current stone is 0, we return no possible moves (error handling)
         int stoneValue = board[currentX][currentY];
         if (stoneValue == 0) {
-            System.out.println("Error: The stone cannot have a value of 0.");
+            LOGGER.log(Level.SEVERE, "Error: The stone cannot have a value of 0.");
             return nextStates;
         }
+
+        LOGGER.log(Level.INFO, "Generating next states for stone at ({0}, {1}) with value {2}", new Object[]{currentX, currentY, stoneValue});
 
         // Movement directions for horizontal/vertical or diagonal
         int[][] directions;
@@ -62,7 +69,7 @@ public class PuzzleState implements State {
                     {1, -1},  // down-left
                     {-1, 1}   // up-right
             };
-            System.out.println("Framed square - diagonal movement only.");
+            LOGGER.log(Level.INFO, "Framed square - diagonal movement only.");
         } else {
             // Unframed squares: horizontal and vertical movement only
             directions = new int[][]{
@@ -71,7 +78,7 @@ public class PuzzleState implements State {
                     {0, 1},   // down
                     {0, -1}   // up
             };
-            System.out.println("Unframed square - horizontal/vertical movement.");
+            LOGGER.log(Level.INFO, "Unframed square - horizontal/vertical movement.");
         }
 
         // Try moving in all possible directions based on stone value
@@ -85,37 +92,41 @@ public class PuzzleState implements State {
                 newBoardState[currentX][currentY] = 0; // Set the current position to 0 (empty)
                 newBoardState[newX][newY] = stoneValue; // Move the stone to the new position
 
-
                 PuzzleState nextState = new PuzzleState(newBoardState);
                 nextState.setPreviousState(this);
                 nextState.setStonePosition(newX, newY); // Update the stone position
                 nextStates.add(nextState);
 
-                System.out.println("Current stone position: (" + currentX + ", " + currentY + ") with value: " + stoneValue);
-
+                LOGGER.log(Level.INFO, "Valid move to ({0}, {1}) generated a new state.", new Object[]{newX, newY});
+            } else {
+                LOGGER.log(Level.WARNING, "Invalid move attempted to ({0}, {1})", new Object[]{newX, newY});
             }
         }
 
+        LOGGER.log(Level.INFO, "Generated {0} next states.", nextStates.size());
         return nextStates;
     }
 
     // Helper function to check if the move stays within board boundaries
     private boolean isValidMove(int x, int y) {
-        return x >= 0 && x < board.length && y >= 0 && y < board[0].length;
+        boolean valid = x >= 0 && x < board.length && y >= 0 && y < board[0].length;
+        LOGGER.log(Level.FINE, "Move to ({0}, {1}) is {2}", new Object[]{x, y, valid ? "valid" : "invalid"});
+        return valid;
     }
 
     // Method to check if a square is framed (example implementation)
     private boolean isFramed(int x, int y) {
         // Define framed squares based on your board logic
         // This could be based on the position or other criteria
-        // Example: consider the border squares to be framed
-        return (x == 0 || x == board.length - 1 || y == 0 || y == board[0].length - 1);
+        boolean framed = (x == 0 || x == board.length - 1 || y == 0 || y == board[0].length - 1);
+        LOGGER.log(Level.FINE, "Square ({0}, {1}) is {2}", new Object[]{x, y, framed ? "framed" : "unframed"});
+        return framed;
     }
-
 
     private void setStonePosition(int newX, int newY) {
         this.stonePositionX = newX;
         this.stonePositionY = newY;
+        LOGGER.log(Level.FINE, "Stone position updated to ({0}, {1})", new Object[]{newX, newY});
     }
 
     public int getStonePositionX() {
@@ -133,8 +144,6 @@ public class PuzzleState implements State {
     public void setPreviousState(PuzzleState previousState) {
         this.previousState = previousState;
     }
-
-
 
     public static PuzzleState fromBoardState(int[][] boardState) {
         return new PuzzleState(boardState);
@@ -165,6 +174,7 @@ public class PuzzleState implements State {
             }
             sb.append("\n");
         }
+        LOGGER.log(Level.FINE, "Board state:\n{0}", sb.toString());
         return sb.toString();
     }
 }
