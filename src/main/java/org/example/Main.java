@@ -16,7 +16,8 @@ public class Main extends Application {
         SceneManager.getInstance().loadScene("/front_page.fxml");
 
         // Set and show the stage
-        primaryStage.setTitle("Game Front Page");
+
+        primaryStage.setTitle("Frame It");
         primaryStage.show();
     }
 
