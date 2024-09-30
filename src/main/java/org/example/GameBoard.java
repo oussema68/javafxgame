@@ -110,7 +110,9 @@ public class GameBoard {
                 } else {
                     board[i][j] = random.nextInt(7) + 1; // Random values between 1 and 7
                 }
+
                 framed[i][j] = random.nextBoolean(); // Randomly frame squares
+
                 LOGGER.log(Level.FINE, "Cell [{0}, {1}] set to {2}, Framed: {3}", new Object[]{i, j, board[i][j], framed[i][j]});
             }
         }
@@ -141,7 +143,9 @@ public class GameBoard {
         gridPane.getChildren().clear();
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
-                Button button = new Button(String.valueOf(board[i][j]));
+                // Check if it's the specific position (7,7) where "*" should be displayed
+                String buttonText = (i == 7 && j == 7) ? "*" : String.valueOf(board[i][j]);
+                Button button = new Button(buttonText);
                 if (framed[i][j]) {
                     button.setStyle("-fx-border-color: black;");
                 }
