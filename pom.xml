@@ -3,15 +3,15 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.example</groupId>
-    <artifactId>game-project</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <groupId>org.example</groupId>
+    <artifactId>myapp</artifactId>
+    <version>1</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>21</maven.compiler.release>
 
-        <exec.mainClass>com.example.Main</exec.mainClass>
+        <exec.mainClass>org.example.Main</exec.mainClass>
     </properties>
 
     <dependencies>
@@ -27,6 +27,18 @@
             <artifactId>javafx-fxml</artifactId>
             <version>22.0.1</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-graphics</artifactId>
+            <version>22.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-base</artifactId>
+            <version>22.0.1</version>
+        </dependency>
+
         <!-- JAXB -->
         <dependency>
             <groupId>javax.xml.bind</groupId>
@@ -52,6 +64,7 @@
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-maven-plugin</artifactId>
             <version>0.0.8</version>
+
 
 
 
@@ -100,6 +113,19 @@
                     <release>21</release> <!-- Specify the Java version here -->
                     <source>11</source>
                     <target>11</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.3.0</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>org.example.Main</mainClass> <!-- Update this line -->
+                        </manifest>
+                    </archive>
                 </configuration>
             </plugin>
             <!-- Maven Surefire Plugin -->
@@ -252,7 +278,7 @@
 
     <developers>
         <developer>
-            <id>CI1A19</id>
+
             <name>Oussema Hammadi</name>
             <email>ohammadi.oh@gmail.com</email>
         </developer>

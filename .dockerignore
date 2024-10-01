@@ -1,0 +1,24 @@
+# Ignore the Maven target directory
+target/
+
+# Ignore build-related files
+*.log
+*.class
+*.jar
+*.war
+*.zip
+*.tar
+*.tar.gz
+
+# Ignore the IDE directories and files
+.idea/
+*.iml
+*.class
+
+# Ignore version control files
+.git/
+.gitignore
+
+# Ignore other local environment files
+.env
+*.DS_Store

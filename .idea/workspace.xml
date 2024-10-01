@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3091ab23-e927-4874-8f41-eca635f687b4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/InstructionsDialogController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/InstructionsDialog.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/FrontPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/FrontPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/front_page.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/front_page.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/high_scores.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/high_scores.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/InstructionsDialog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/InstructionsDialog.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,11 +85,11 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "SDKs",
+    "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.4275862",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "project.propDebugger",
+    "settings.editor.selected.configurable": "preferences.keymap",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -142,6 +141,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
+      <deployment type="dockerfile" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -171,7 +174,8 @@
       <workItem from="1717588203372" duration="15058000" />
       <workItem from="1719226717201" duration="38776000" />
       <workItem from="1726466657994" duration="6560000" />
-      <workItem from="1727174956061" duration="30214000" />
+      <workItem from="1727174956061" duration="30536000" />
+      <workItem from="1727715052573" duration="13635000" />
     </task>
     <servers />
   </component>
