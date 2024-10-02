@@ -60,6 +60,10 @@
         </dependency>
 
 
+
+
+
+
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-maven-plugin</artifactId>
@@ -104,6 +108,14 @@
 
     <build>
         <plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version>
+            </plugin>
+
+
             <!-- Maven Compiler Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

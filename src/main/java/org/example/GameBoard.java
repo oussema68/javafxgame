@@ -120,6 +120,8 @@ public class GameBoard {
     }
 
     public void moveStone(int dx, int dy) {
+        LOGGER.log(Level.INFO, "Attempting to move stone from [{0}, {1}] by [{2}, {3}]",
+                new Object[]{stonePositionX, stonePositionY, dx, dy});
         if (isValidMove(dx, dy)) {
             stonePositionX += dx;
             stonePositionY += dy;
@@ -203,6 +205,7 @@ public class GameBoard {
         if (!isFramed) {
             int steps = board[stonePositionY][stonePositionX];
             moveStone(steps, 0);
+            LOGGER.info("Move right worked.");
         }
     }
 
@@ -213,6 +216,7 @@ public class GameBoard {
         if (!isFramed) {
             int steps = board[stonePositionY][stonePositionX];
             moveStone(-steps, 0);
+            LOGGER.info("Move left worked.");
         }
     }
 
@@ -223,6 +227,7 @@ public class GameBoard {
         if (!isFramed) {
             int steps = board[stonePositionY][stonePositionX];
             moveStone(0, steps);
+            LOGGER.info("Move down worked.");
         }
     }
 
@@ -233,6 +238,7 @@ public class GameBoard {
         if (!isFramed) {
             int steps = board[stonePositionY][stonePositionX];
             moveStone(0, -steps);
+            LOGGER.info("Move up worked.");
         }
     }
 
@@ -243,6 +249,7 @@ public class GameBoard {
         if (isFramed) {
             int steps = board[stonePositionY][stonePositionX];
             moveStone(-steps, -steps);
+            LOGGER.info("Move up left worked.");
         }
     }
 
@@ -253,6 +260,7 @@ public class GameBoard {
         if (isFramed) {
             int steps = board[stonePositionY][stonePositionX];
             moveStone(steps, -steps);
+            LOGGER.info("Move up right worked.");
         }
     }
 
@@ -263,6 +271,7 @@ public class GameBoard {
         if (isFramed) {
             int steps = board[stonePositionY][stonePositionX];
             moveStone(-steps, steps);
+            LOGGER.info("Move down left worked.");
         }
     }
 
@@ -273,6 +282,7 @@ public class GameBoard {
         if (isFramed) {
             int steps = board[stonePositionY][stonePositionX];
             moveStone(steps, steps);
+            LOGGER.info("Move down right worked.");
         }
     }
 
