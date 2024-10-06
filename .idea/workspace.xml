@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3091ab23-e927-4874-8f41-eca635f687b4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/HighScore.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/high_scores.json" beforeDir="false" afterPath="$PROJECT_DIR$/high_scores.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/GameBoard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/InstructionsDialog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/InstructionsDialog.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +76,7 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Brigi/Desktop/soft/game/target/classes/org",
+    "last_opened_file_path": "C:/Users/George/javafxgame",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -105,18 +100,6 @@
     <option name="ciType" value="GITHUB" />
     <option name="path" value="$PROJECT_DIR$/.github/workflows/qodana_code_quality.yml" />
   </component>
-  <component name="QodanaHighlightedReportService">
-    <option name="localReportPersistedInfo">
-      <LocalReportPersistedInfo>
-        <option name="path" value="C:\Users\Brigi\Desktop\soft\game\qodana.sarif.json" />
-        <option name="reportGuid" value="6d43cc36-e305-49cd-b108-24a3483b52e5" />
-        <option name="reportName" value="game/qodana/2024-05-26" />
-      </LocalReportPersistedInfo>
-    </option>
-  </component>
-  <component name="QodanaIsSelectedPersistenceService">
-    <option name="selectedOrLoading" value="true" />
-  </component>
   <component name="QodanaReportsService">
     <option name="descriptions">
       <ReportDescription path="C:\Users\Brigi\Desktop\soft\game\qodana.sarif.json" reportGuid="6d43cc36-e305-49cd-b108-24a3483b52e5" reportId="game/qodana/2024-05-26" />
@@ -137,9 +120,8 @@
   <component name="RunManager">
     <configuration name="game" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
-      <module name="game" />
-      <option name="PROGRAM_PARAMETERS" value="$USER_HOME$/.m2/repository$MODULE_DIR$$MODULE_WORKING_DIR$$AffectedModuleNames$" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Brigi\Downloads\openjfx-21.0.3_windows-x64_bin-sdk\javafx-sdk-21.0.3\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <module name="myapp" />
+      <option name="PROGRAM_PARAMETERS" value="$PROJECT_DIR$/../.m2/repository$MODULE_DIR$$MODULE_WORKING_DIR$$AffectedModuleNames$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -154,8 +136,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-21.0.2-corretto-21.0.2-4caba194b151-51586f01" />
-        <option value="jdk-22-openjdk-22-4caba194b151-f504ca98" />
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.17011.79" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.17011.79" />
       </set>
     </attachedChunks>
   </component>
@@ -185,6 +167,7 @@
       <workItem from="1727854590750" duration="1593000" />
       <workItem from="1727856208748" duration="1794000" />
       <workItem from="1727859093907" duration="476000" />
+      <workItem from="1728220773517" duration="158000" />
     </task>
     <servers />
   </component>
